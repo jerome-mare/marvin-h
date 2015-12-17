@@ -16,13 +16,13 @@ process.env.HUBOT_WEATHER_API_URL ||=
 process.env.HUBOT_WEATHER_UNITS ||= 'metric'
 
 module.exports = (robot) ->
-  robot.hear /weather in (\w+)/i, (msg) ->
+  robot.hear /meteo a (\w+)/i, (msg) ->
     city = msg.match[1]
-    query = { units: process.env.HUBOT_WEATHER_UNITS, q: city, APPID: 'e0c7fc36e50292f9b00704bd4eede937' }
+    query = { units: process.env.HUBOT_WEATHER_UNITS, q: city, lang:'fr', APPID: 'e0c7fc36e50292f9b00704bd4eede937' }
     url = process.env.HUBOT_WEATHER_API_URL
     msg.robot.http(url).query(query).get() (err, res, body) ->
       data = JSON.parse(body)
-      weather = [ "#{Math.round(data.main.temp)} degrees" ]
+      weather = [ "#{Math.round(data.main.temp)}°C" ]
       for w in data.weather
         weather.push w.description
-       msg.reply "It's #{weather.join(', ')} in #{data.name}, #{data.sys.country}"
+       msg.reply "Il fait #{weather.join(', ')} à #{data.name}, #{data.sys.country}"
