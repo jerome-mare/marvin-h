@@ -9,5 +9,10 @@
   "hubot-redis-brain",
   "hubot-rules",
   "hubot-shipit",
-  "hubot-marvin"
+  "hubot-marvin",
+  "hubot-artsy",
+  "hubot-substitute",
+  "hubot-cah",
+  "hubot-sensors",
+  "hubot-calculator"
 ]
