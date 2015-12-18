@@ -14,5 +14,6 @@
   "hubot-substitute",
   "hubot-cah",
   "hubot-sensors",
-  "hubot-calculator"
+  "hubot-calculator",
+  "hubot-auth"
 ]
