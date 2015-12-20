@@ -1,12 +1,12 @@
 # Description:
-#   Tells the weather
+#   Donne la meteo
 #
 # Configuration:
-#   HUBOT_WEATHER_API_URL - Optional openweathermap.org API endpoint to use
-#   HUBOT_WEATHER_UNITS - Temperature units to use. 'metric' or 'imperial'
+#   HUBOT_WEATHER_API_URL - Optionnel openweathermap.org API endpoint
+#   HUBOT_WEATHER_UNITS - Unite de Temperature a utiliser. 'metric' or 'imperial'
 #
-# Commands:
-#   weather in <location> - Tells about the weather in given location
+# Commandes:
+#   meteo a <location> - Donne la meteo a l'endroit passe en parametre
 #
 # Author:
 #   spajus
@@ -25,4 +25,4 @@ module.exports = (robot) ->
       weather = [ "#{Math.round(data.main.temp)}°C" ]
       for w in data.weather
         weather.push w.description
-       msg.reply "Il fait #{weather.join(', ')} à #{data.name}, #{data.sys.country}"
+      msg.reply "Il fait #{weather.join(', ')} à #{data.name}, #{data.sys.country}"
