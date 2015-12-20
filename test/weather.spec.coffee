@@ -36,12 +36,10 @@ describe 'hello-world', ->
 
   context 'user asks meteo in Toulouse to hubot', ->
     beforeEach (done) ->
-      co =>
-        yield @room.user.say 'toto', 'meteo a toulouse'
+      @room.user.say 'toto', 'meteo a toulouse'
       setTimeout done, 100
 
     it 'should reply to user', ->
-
       expect(@room.messages).to.eql [
         ['toto', 'meteo a toulouse']
         ['hubot', '@toto Il fait 10°C, nuageux à Toulouse, fr']
