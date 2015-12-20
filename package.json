@@ -27,7 +27,7 @@
     "hubot-substitute": "^0.2.0"
   },
   "engines": {
-    "node": "0.10.x"
+    "node": "4"
   },
   "devDependencies": {
     "chai": "^3.4.1",
